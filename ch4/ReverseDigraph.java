@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class ReverseDiagraph {
+public class ReverseDigraph {
   public static void main(String[] args) {
     final int[][] edges = {{0, 1}, {1, 2}, {2, 3}, {3, 0}};
     final List<List<Integer>> digraph = buildDigraph(edges, 4);
