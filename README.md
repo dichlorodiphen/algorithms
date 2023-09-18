@@ -21,3 +21,7 @@ A collection of algorithm implementations from *Algorithms* by Robert Sedgewick 
 * Find a directed cycle in a digraph using DFS ([ch4/sec2/DirectedCycle.java](ch4/sec2/DirectedCycle.java))
 * Find a topological ordering for a digraph ([ch4/sec2/Topological.java](ch4/sec2/Topological.java))
 * Find strongly connected components in a digraph using the Kosaraju-Sharir algorithm ([ch4/sec2/KosarajuSharir.java](ch4/sec2/KosarajuSharir.java))
+
+### 4.3: Minimum spanning trees
+
+* Find an MST using Prim's algorithm (lazy removal of invalid edges from priority queue) ([ch4/sec3/LazyPrim.java](ch4/sec3/LazyPrim.java))
