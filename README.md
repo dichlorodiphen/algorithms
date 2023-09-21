@@ -25,3 +25,4 @@ A collection of algorithm implementations from *Algorithms* by Robert Sedgewick 
 ### 4.3: Minimum spanning trees
 
 * Find an MST using Prim's algorithm (lazy removal of invalid edges from priority queue) ([ch4/sec3/LazyPrim.java](ch4/sec3/LazyPrim.java))
+* Find an MST using Prim's algorithm (priority queue does not maintain invalid edges) ([ch4/sec3/EagerPrim.java](ch4/sec3/EagerPrim.java))
