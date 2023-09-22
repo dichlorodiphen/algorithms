@@ -6,6 +6,12 @@ A collection of algorithm implementations from *Algorithms* by Robert Sedgewick 
 
 * [ ] Set up unit testing with JUnit
 
+## Chapter 1: Fundamentals
+
+### 1.5: Case Study: Union-Find
+
+* Quick-find algorithm ([ch1/sec5/QuickFind.java](ch1/sec5/QuickFind.java))
+
 ## Chapter 4: Graphs
 
 ### 4.1: Undirected graphs
