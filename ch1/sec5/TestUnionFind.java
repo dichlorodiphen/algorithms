@@ -18,6 +18,7 @@ public class TestUnionFind {
                 { 6, 7 }
         };
         System.out.println(test(QuickFind.class, connections));
+        System.out.println(test(WeightedQuickUnion.class, connections));
     }
 
     private static <T extends UnionFind> List<Integer> test(Class<T> algorithm, int[][] connections) {

@@ -11,6 +11,7 @@ A collection of algorithm implementations from *Algorithms* by Robert Sedgewick 
 ### 1.5: Case Study: Union-Find
 
 * Quick-find algorithm ([ch1/sec5/QuickFind.java](ch1/sec5/QuickFind.java))
+* Weighted quick-union algorithm ([ch1/sec5/WeightedQuickUnion.java](ch1/sec5/WeightedQuickUnion.java))
 
 ## Chapter 4: Graphs
 

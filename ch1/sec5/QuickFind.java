@@ -1,12 +1,15 @@
 package ch1.sec5;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
  * QuickFind is an implementation of the union-find algorithm that maintains
  * the invariant that all elements in a component have the same identifier in
- * our identifier map. This method is called quick-find because it enables us
+ * our identifier map.
+ *
+ * This method is called quick-find because it enables us
  * to perform find() operations in constant time.
  */
 public class QuickFind implements UnionFind {
@@ -16,7 +19,7 @@ public class QuickFind implements UnionFind {
     private int numComponents;
 
     /**
-     * Initialize with n elements (0 to n - 1).
+     * Initializes with n elements (0 to n-1).
      * 
      * @param n the number of elements
      */
@@ -28,6 +31,7 @@ public class QuickFind implements UnionFind {
         this.numComponents = n;
     }
 
+    @Override
     public void union(int p, int q) {
         if (ids.get(p).equals(ids.get(q))) {
             return;
@@ -43,19 +47,23 @@ public class QuickFind implements UnionFind {
         numComponents--;
     }
 
+    @Override
     public int find(int p) {
         return ids.get(p);
     }
 
+    @Override
     public boolean connected(int p, int q) {
         return find(p) == find(q);
     }
 
+    @Override
     public int count() {
         return numComponents;
     }
 
+    @Override
     public List<Integer> getIDs() {
-        return ids;
+        return Collections.unmodifiableList(ids);
     }
 }
