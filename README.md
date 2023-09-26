@@ -34,3 +34,7 @@ A collection of algorithm implementations from *Algorithms* by Robert Sedgewick 
 * Find an MST using Prim's algorithm (lazy removal of invalid edges from priority queue) ([ch4/sec3/LazyPrim.java](ch4/sec3/LazyPrim.java))
 * Find an MST using Prim's algorithm (priority queue does not maintain invalid edges) ([ch4/sec3/EagerPrim.java](ch4/sec3/EagerPrim.java))
 * Kruskal's algorithm ([ch4/sec3/Kruskal.java](ch4/sec3/Kruskal.java))
+
+### 4.4: Shortest paths
+
+* Generic shortest-paths algorithm ([ch4/sec4/GenericShortestPath.java](ch4/sec4/GenericShortestPath.java))

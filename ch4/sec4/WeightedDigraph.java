@@ -42,4 +42,8 @@ public class WeightedDigraph {
     public String toString() {
         return adj.toString();
     }
+
+    public int getNumberOfVertices() {
+        return adj.size();
+    }
 }
