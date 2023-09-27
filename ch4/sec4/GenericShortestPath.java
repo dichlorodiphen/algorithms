@@ -10,38 +10,28 @@ import java.util.List;
  * Found on page 651, this algorithm relaxes edges in the given graph until no
  * more edges can be relaxed.
  */
-public class GenericShortestPath {
-    public static void main(String[] args) {
-        final GenericShortestPath sp = new GenericShortestPath();
-        final WeightedDigraph g = new WeightedDigraph(4);
-        g.addEdge(new Edge(0, 1, 0.2));
-        g.addEdge(new Edge(1, 2, 0.3));
-        g.addEdge(new Edge(2, 3, 0.1));
-        g.addEdge(new Edge(3, 0, 0.4));
-        g.addEdge(new Edge(0, 2, 0.4));
+public class GenericShortestPath implements ShortestPath {
 
-        System.out.println(sp.shortestPath(g, 0, 1));
-    }
+    private final WeightedDigraph graph;
 
-    public List<Edge> shortestPath(WeightedDigraph g, int start, int end) {
-        final List<Edge> edgeTo = new ArrayList<>();
-        final List<Double> distTo = new ArrayList<>();
-        for (int i = 0; i < g.getNumberOfVertices(); i++) {
+    private final List<Edge> edgeTo;
+
+    private final List<Double> distTo;
+
+    public GenericShortestPath(WeightedDigraph graph, int start) {
+        this.graph = graph;
+        edgeTo = new ArrayList<>();
+        distTo = new ArrayList<>();
+        for (int i = 0; i < graph.getNumberOfVertices(); i++) {
             edgeTo.add(null);
             distTo.add(Double.POSITIVE_INFINITY);
         }
         distTo.set(start, 0.0);
+        precomputeShortestPaths();
+    }
 
-        boolean hasEligibleEdges = true;
-        final Iterable<Edge> edges = g.edges();
-        while (hasEligibleEdges) {
-            hasEligibleEdges = false;
-            for (Edge e : edges) {
-                hasEligibleEdges =
-                        hasEligibleEdges || relax(g, e, edgeTo, distTo);
-            }
-        }
-
+    @Override
+    public List<Edge> shortestPath(int end) {
         if (Double.isInfinite(distTo.get(end))) {
             return null;
         }
@@ -55,8 +45,18 @@ public class GenericShortestPath {
         return path;
     }
 
-    private boolean relax(WeightedDigraph g, Edge e, List<Edge> edgeTo,
-            List<Double> distTo) {
+    private void precomputeShortestPaths() {
+        boolean hasEligibleEdges = true;
+        final Iterable<Edge> edges = graph.edges();
+        while (hasEligibleEdges) {
+            hasEligibleEdges = false;
+            for (Edge e : edges) {
+                hasEligibleEdges = hasEligibleEdges || relax(e);
+            }
+        }
+    }
+
+    private boolean relax(Edge e) {
         if (distTo.get(e.v()) + e.weight() < distTo.get(e.w())) {
             distTo.set(e.w(), distTo.get(e.v()) + e.weight());
             edgeTo.set(e.w(), e);
