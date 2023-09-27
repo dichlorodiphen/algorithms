@@ -2,15 +2,35 @@ package ch4.sec4;
 
 public class TestShortestPath {
     public static void main(String[] args) {
-        final WeightedDigraph g = new WeightedDigraph(4);
-        g.addEdge(new Edge(0, 1, 0.2));
-        g.addEdge(new Edge(1, 2, 0.3));
-        g.addEdge(new Edge(2, 3, 0.1));
-        g.addEdge(new Edge(3, 0, 0.4));
-        g.addEdge(new Edge(0, 2, 0.4));
+        final WeightedDigraph dag = new WeightedDigraph(8);
+        final int[][] edges = {
+                { 5, 4, 35 },
+                { 4, 7, 37 },
+                { 5, 7, 28 },
+                { 5, 1, 32 },
+                { 4, 0, 38 },
+                { 0, 2, 26 },
+                { 3, 7, 39 },
+                { 1, 3, 29 },
+                { 7, 2, 34 },
+                { 6, 2, 40 },
+                { 3, 6, 52 },
+                { 6, 0, 58 },
+                { 6, 4, 93 }
+        };
+        addEdges(dag, edges);
+        final int start = 1;
+        final int end = 2;
 
-        test(GenericShortestPath.class, g, 0, 3);
-        test(Dijkstra.class, g, 0, 3);
+        test(GenericShortestPath.class, dag, start, end);
+        test(Dijkstra.class, dag, start, end);
+        test(DAGShortestPath.class, dag, start, end);
+    }
+
+    private static void addEdges(WeightedDigraph g, int[][] edges) {
+        for (int[] e : edges) {
+            g.addEdge(new Edge(e[0], e[1], e[2]));
+        }
     }
 
     private static <T extends ShortestPath> void test(Class<T> algorithm, WeightedDigraph g, int start, int end) {

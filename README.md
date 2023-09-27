@@ -4,7 +4,8 @@ A collection of algorithm implementations from *Algorithms* by Robert Sedgewick 
 
 ## To-do
 
-* [ ] Set up unit testing with JUnit
+* [ ] Set up unit testing with JUnit.
+* [ ] Pull repeated code in shortest-path algorithms into abstract class.
 
 ## Chapter 1: Fundamentals
 
@@ -39,3 +40,4 @@ A collection of algorithm implementations from *Algorithms* by Robert Sedgewick 
 
 * Generic shortest-paths algorithm ([ch4/sec4/GenericShortestPath.java](ch4/sec4/GenericShortestPath.java))
 * Dijkstra's algorithm ([ch4/sec4/Dijkstra.java](ch4/sec4/Dijkstra.java))
+* Weighted DAG shortest-path algorithm ([ch4/sec4/DAGShortestPath.java](ch4/sec4/DAGShortestPath.java))
