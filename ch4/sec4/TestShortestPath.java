@@ -10,6 +10,7 @@ public class TestShortestPath {
         g.addEdge(new Edge(0, 2, 0.4));
 
         test(GenericShortestPath.class, g, 0, 3);
+        test(Dijkstra.class, g, 0, 3);
     }
 
     private static <T extends ShortestPath> void test(Class<T> algorithm, WeightedDigraph g, int start, int end) {

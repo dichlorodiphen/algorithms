@@ -18,6 +18,12 @@ public class GenericShortestPath implements ShortestPath {
 
     private final List<Double> distTo;
 
+    /**
+     * Initializes the algorithm with the given graph and start vertex.
+     * 
+     * @param graph a weighted digraph
+     * @param start the vertex to start the path from
+     */
     public GenericShortestPath(WeightedDigraph graph, int start) {
         this.graph = graph;
         edgeTo = new ArrayList<>();

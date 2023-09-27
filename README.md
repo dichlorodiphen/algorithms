@@ -38,3 +38,4 @@ A collection of algorithm implementations from *Algorithms* by Robert Sedgewick 
 ### 4.4: Shortest paths
 
 * Generic shortest-paths algorithm ([ch4/sec4/GenericShortestPath.java](ch4/sec4/GenericShortestPath.java))
+* Dijkstra's algorithm ([ch4/sec4/Dijkstra.java](ch4/sec4/Dijkstra.java))
