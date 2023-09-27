@@ -1,3 +1,5 @@
+package ch4.sec2;
+
 import java.util.*;
 
 public class KosarajuSharir {

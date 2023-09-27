@@ -1,3 +1,5 @@
+package ch4.sec1;
+
 import java.util.*;
 
 public class ConnectedComponents {
